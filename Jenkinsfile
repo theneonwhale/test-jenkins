@@ -6,9 +6,9 @@ pipeline {
             steps {
                 sh '''
                 # Install Apache (httpd)
-                sudo dnf install -y httpd
-                sudo systemctl start httpd
-                sudo systemctl enable httpd
+                dnf install -y httpd
+                systemctl start httpd
+                systemctl enable httpd
                 '''
             }
         }
