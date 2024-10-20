@@ -18,7 +18,7 @@ pipeline {
                 script {
                     // Check for 4xx and 5xx errors in the Apache access log
                     def errorsFound = sh(script: '''
-                        if grep -E "HTTP/1.[01]\" (4[0-9]{2}|5[0-9]{2})" /var/log/httpd/access_log; then
+                        if grep -E "HTTP/1.[01] \\"(4[0-9]{2}|5[0-9]{2})\\"" /var/log/httpd/access_log; then
                             echo "Errors found in the logs!"
                             exit 1
                         else
